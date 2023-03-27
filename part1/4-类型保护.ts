@@ -1,15 +1,18 @@
 // 1、typeof
 function handle(idCard: string | number) {
-    if (typeof idCard == 'string') {
-        idCard.length
+    if (typeof idCard === 'string') {
+        return idCard.length
     } else {
-        idCard.toFixed()
+        return idCard.toFixed(2)
     }
 }
 
+handle('233454')
+
+handle(1234)
+
 // 2、instanceof
 class Cat {
-    kind = 'cat'
     helloCat() {
         console.log('cat...')
     }
@@ -17,7 +20,6 @@ class Cat {
 }
 
 class Dog {
-    kind = 'dog'
     helloDog() {
         console.log('dog...')
     }

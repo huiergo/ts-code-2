@@ -1,27 +1,33 @@
 function time(value: any, context: ClassMethodDecoratorContext) {
-    const { kind, name } = context
-    const methodName = String(name)
+    return function (this: any, ...args: any[]) {
+        let startTime = new Date().getTime()
+        value.apply(this, args)
+        let spendTime = new Date().getTime() - startTime
+        console.log('耗时： ', spendTime)
+    }
 
-    let startTime = new Date().getTime();
-    value.apply(this, args)
-    let spendTime = new Date().getTime() - startTime;
 }
 
 function log(value: any, context: ClassMethodDecoratorContext) {
-    const { kind, name } = context
-    const methodName = String(name)
-    console.log("--->>>", "方法开始执行");
-    value.apply(this, args)
-    console.log("--->>>", "方法开始执行");
-}
-
-
-class Calculator {
-    @time
-    @log
-    calculate(par: number) {
-        //...
+    return function (this: any, ...args: any[]) {
+        console.log('---> 执行开始')
+        value.apply(this, args)
+        console.log('---> 执行结束')
     }
 }
 
+interface ICalculate {
+    calculate(): void
+}
+
+class Calculator implements ICalculate {
+    @log
+    @time
+    calculate(): void {
+        console.log('核心逻辑')
+    }
+
+}
+
+new Calculator().calculate()
 export { }

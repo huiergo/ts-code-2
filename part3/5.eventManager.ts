@@ -2,8 +2,8 @@ class EventManager {
 
     private static instance: EventManager;
     eventMap: any = {
-        'key1': [fn1, fn2],
-        'key2': [fn1, fn2]
+        // 'key1': [fn1, fn2],
+        // 'key2': [fn1, fn2]
     }
 
     public static getInstance(): EventManager {
