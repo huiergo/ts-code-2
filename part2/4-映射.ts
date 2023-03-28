@@ -23,7 +23,7 @@ type Person_ReadOnly<T> = {
 // type P = Person_ReadOnly<Person>
 
 // 1、ReadOnly
-type P = Readonly<Person>
+type P1 = Readonly<Person>
 
 // 2、可选 Partial
 type P2 = Partial<Person>

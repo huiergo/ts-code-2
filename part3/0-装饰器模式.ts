@@ -35,12 +35,9 @@ class LogDecorator implements ICalculate {
     }
 }
 
+
 let cal = new Calculator()
-
-let timeCal: ICalculate = new TimeDecorator(cal)
-timeCal.calculate()
-
-let logCal: ICalculate = new LogDecorator(cal)
-logCal.calculate()
+let decorator = new LogDecorator(new TimeDecorator(cal))
+decorator.calculate()
 
 export { }

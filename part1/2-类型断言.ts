@@ -9,7 +9,11 @@ person.age = 20; // Error: 'age' 属性不存在于 ‘{}’
 
 
 
-// 改造： 
+// // 改造： 
+// interface Person {
+//     name: string;
+//     age: number;
+//   }
 // const person = {} as Person
 // person.name = 'ding'
 // person.age = 18

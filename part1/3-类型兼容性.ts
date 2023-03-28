@@ -7,22 +7,22 @@ x = y
 // y=x
 
 
-interface Animal1 {
+interface Animal {
     name: string;
     age: number;
 }
 
-interface Dog1 extends Animal1 {
+interface Dog extends Animal {
     breed: string;
 }
 
-let myDog: Dog1 = {
-    name: 'Max',
+let myDog: Dog = {
+    name: 'doggy',
     age: 2,
-    breed: 'Golden Retriever'
+    breed: 'labuladuo'
 };
 
-let myAnimal: Animal1 = myDog;
+let myAnimal: Animal = myDog;
 
 
 export { }
